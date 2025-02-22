@@ -5,3 +5,63 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+:root {
+  --base-light-green: #e1f0da;
+  --base-dark-green: #30796e;
+  --dark-green: #2e4d1c;
+  --white-green: #f7fff5;
+}
+
+body {
+  background: var(--base-light-green);
+}
+
+/* Root container/App */
+#root {
+  display: flex;
+  gap: 2.5rem;
+  padding: 2rem;
+  height: 100vh;
+}
+
+/* Navbar */
+nav {
+  background: var(--base-dark-green);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  width: 80px;
+  border-radius: 1.2rem;
+}
+
+.main-navigation-icons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-icon {
+  background: var(--base-light-green);
+  background: var(--white-green);
+  color: var(--dark-green);
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.nav-icon:hover {
+  transform: scale(1.15);
+}
+
+/* Main content */
+main {
+  border: solid black;
+  width: 100%;
+}
