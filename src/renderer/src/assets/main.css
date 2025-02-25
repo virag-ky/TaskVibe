@@ -73,3 +73,8 @@ main {
 main > section {
   width: 50%;
 }
+
+/* Task List */
+li {
+  display: flex;
+}

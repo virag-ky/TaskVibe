@@ -10,7 +10,11 @@ function TaskList() {
           <IoMdOptions />
         </button>
       </div>
-      <Task />
+      <ul>
+        <Task />
+        <Task />
+        <Task />
+      </ul>
       <div className="delete-buttons">
         <button>Delete Completed</button>
         <button>Delete All</button>
