@@ -64,4 +64,10 @@ nav {
 main {
   border: solid black;
   width: 100%;
+  display: flex;
+}
+
+main > section {
+  width: 50%;
+  border: solid black;
 }
