@@ -23,6 +23,7 @@ body {
   gap: 2.5rem;
   padding: 2rem;
   height: 100vh;
+  background: var(--base-light-green);
 }
 
 /* Navbar */
@@ -44,19 +45,21 @@ nav {
   gap: 1.5rem;
 }
 
-.nav-icon {
-  background: var(--base-light-green);
+.nav-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: var(--white-green);
   color: var(--dark-green);
   border-radius: 50%;
+  border: none;
   width: 2.5rem;
   height: 2.5rem;
-  padding: 0.5rem;
   cursor: pointer;
   transition: 0.5s;
 }
 
-.nav-icon:hover {
+.nav-button:hover {
   transform: scale(1.15);
 }
 
