@@ -23,6 +23,7 @@
     "@mantine/core": "^7.17.0",
     "@mantine/dates": "^7.17.0",
     "@mantine/hooks": "^7.17.0",
+    "@supabase/supabase-js": "^2.49.1",
     "dayjs": "^1.11.13",
     "electron-updater": "^6.1.7",
     "react-icons": "^5.5.0",
