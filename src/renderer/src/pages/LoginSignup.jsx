@@ -1,50 +1,52 @@
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
-import { TextInput } from '@mantine/core'
-import { PasswordInput } from '@mantine/core'
-import { Title } from '@mantine/core'
-import { Text } from '@mantine/core'
+//import { useState } from 'react'
+import { TextInput, PasswordInput, Title, Text } from '@mantine/core'
+import { useForm } from '@mantine/form'
 import { CiAt } from 'react-icons/ci'
-import supabase from '../supabase'
+//import supabase from '../supabase'
 
 function LoginSignup() {
-  const [hasUser, setHasUser] = useState(false)
-  const [username, setUsername] = useState('')
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  //const [hasUser, setHasUser] = useState(false)
+  let hasUser = ''
+  const form = useForm({
+    mode: 'uncontrolled',
+    initialValues: { username: '', email: '', password: '' },
+    validate: {
+      username: (value) => (value.length < 2 ? 'Name must have at least 2 letters' : null),
+      email: (value) => (/^\S+@\S+$/.test(value) ? null : 'Invalid email'),
+      password: (value) => (value.length < 8 ? 'Password must be at least 8 characters long' : null)
+    }
+  })
 
   const atIcon = <CiAt />
-
-  console.log(username, email, password)
 
   return (
     <section>
       <Title order={1}>{hasUser ? 'Login' : 'Signup'}</Title>
-      <form>
+      <form onSubmit={form.onSubmit((values) => console.log(values))}>
         <TextInput
           label="Username"
           withAsterisk
-          placeholder="Enter your username"
-          value={username}
-          onChange={(e) => setUsername(e.currentTarget.value)}
+          placeholder="your username"
+          key={form.key('username')}
+          {...form.getInputProps('username')}
         />
         <TextInput
           withAsterisk
           rightSectionPointerEvents="none"
           rightSection={atIcon}
           label="Email"
-          placeholder="Enter your email"
-          value={email}
-          onChange={(e) => setEmail(e.currentTarget.value)}
+          placeholder="your@email.com"
+          key={form.key('email')}
+          {...form.getInputProps('email')}
         />
         <PasswordInput
           label="Password"
           withAsterisk
-          placeholder="Enter your password"
-          value={password}
-          onChange={(e) => setPassword(e.currentTarget.value)}
+          placeholder="your password"
+          key={form.key('password')}
+          {...form.getInputProps('password')}
         />
-        <button>{hasUser ? 'Login' : 'Create account'}</button>
+        <button type="submit">{hasUser ? 'Login' : 'Create account'}</button>
       </form>
       <Text>
         {hasUser ? "Don't have an account?" : 'Already have an account?'}{' '}

@@ -1,6 +1,6 @@
 import '@mantine/core/styles.css'
 import '@mantine/dates/styles.css'
-import { useState } from 'react'
+//import { useState } from 'react'
 import { MantineProvider } from '@mantine/core'
 import { MemoryRouter, Route, Routes } from 'react-router-dom'
 import Navbar from './components/Navbar'
@@ -10,7 +10,8 @@ import Settings from './pages/settings'
 import LoginSignup from './pages/LoginSignUp'
 
 function App() {
-  const [user, setUser] = useState(null)
+  //const [user, setUser] = useState(null)
+  let user = ''
   return (
     <MantineProvider>
       <MemoryRouter>
