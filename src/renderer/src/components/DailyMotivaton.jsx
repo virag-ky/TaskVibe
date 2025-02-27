@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Blockquote } from '@mantine/core'
 import supabase from '../supabase'
 
 /* Get all quotes from database */
@@ -86,10 +87,9 @@ function DailyMotivation() {
   return (
     <section>
       <h2>Daily Motivation</h2>
-      <blockquote>
+      <Blockquote color="rgba(255, 255, 255, 0)" radius="md" cite={quoteAuthor}>
         {dailyQuote || 'Loading...'}
-        {quoteAuthor && <cite>{quoteAuthor}</cite>}
-      </blockquote>
+      </Blockquote>
     </section>
   )
 }
