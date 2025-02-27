@@ -46,7 +46,10 @@ function LoginSignup() {
         />
         <button>{hasUser ? 'Login' : 'Create account'}</button>
       </form>
-      <Text>Already have an account?</Text>
+      <Text>
+        {hasUser ? "Don't have an account?" : 'Already have an account?'}{' '}
+        <span>{hasUser ? 'Signup' : 'Login'}</span>
+      </Text>
     </section>
   )
 }
